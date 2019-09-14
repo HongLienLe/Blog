@@ -15,7 +15,7 @@ namespace Blog.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Food()
         {
             return View();
         }
