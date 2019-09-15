@@ -20,5 +20,6 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Food\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Blog.Models.Reciepe>
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+@foreach (var entry in Model)
+{
+    <div>
+        <h2>@entry.Title</h2>
+        <div>
+            <h4>@entry.SubTitle</h4>
+        </div>
+        <img src="" alt="picture of the start to finish project" />
+        <div>
+            <p>@entry.Description</p>
+        </div>
+        <ul>
+            <li>Taste : @entry.Tasty</li>
+            <li>Difficulty : @entry.Difficulty</li>
+            <li>Time : @entry.TimeinMin mins</li>
+        </ul>
+
+
+        <div>
+            <p>@entry.Instructions</p>
+        </div>
+    </div>
+}

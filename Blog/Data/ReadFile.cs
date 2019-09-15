@@ -13,11 +13,17 @@ namespace Blog.Models
         public ReadFile()
         {
             ReciepeEntries = new List<Reciepe>();
+
         }
 
         public List<Reciepe> LoadEntries(string path)
-        {
+        {        
            var files = GetContentFiles(path);
+
+            if(files == null)
+            {
+                return null;
+            }
 
             foreach(var file in files)
             {
@@ -30,7 +36,14 @@ namespace Blog.Models
 
         private string[] GetContentFiles(string path)
         {
-            return Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+            try
+            {
+                return Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+            }catch (Exception e)
+            {
+                Console.WriteLine($"Exception caught: {e.Message}");
+                return null;
+            }
         }
 
         private Reciepe ReadContent(string file)
@@ -50,7 +63,7 @@ namespace Blog.Models
 
                 for (int i = 6; i < lines.Length; i++)
                 {
-                    stringBuilder.Append(lines[i]);
+                    stringBuilder.AppendLine(lines[i]);
                 }
 
                 reciepe.Title = lines[0];
