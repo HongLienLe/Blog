@@ -53,11 +53,11 @@ namespace Blog.Models
 
             if (ValidationCheck(lines)) {
 
-                bool tasteCheck = Int32.TryParse(lines[3], out int tastyLevel);
+                bool tasteCheck = Int32.TryParse(lines[4], out int tastyLevel);
 
-                bool difficultyCheck = Int32.TryParse(lines[4], out int difficultyLevel);
+                bool difficultyCheck = Int32.TryParse(lines[5], out int difficultyLevel);
 
-                bool timeCheck = Int32.TryParse(lines[5], out int time);
+                bool timeCheck = Int32.TryParse(lines[6], out int time);
 
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -69,6 +69,7 @@ namespace Blog.Models
                 reciepe.Title = lines[0];
                 reciepe.SubTitle = lines[1];
                 reciepe.Description = lines[2];
+                reciepe.ImagePath = lines[3];
                 reciepe.Tasty = (Tasty)tastyLevel;
                 reciepe.Difficulty = (Difficulty)difficultyLevel;
                 reciepe.TimeinMin = time;
@@ -80,13 +81,18 @@ namespace Blog.Models
 
         }
 
+        public void GetImagePath()
+        {
+
+        }
+
         private bool ValidationCheck(string[] lines)
         {
-            bool tasteCheck = Int32.TryParse(lines[3],out int tastyLevel);
+            bool tasteCheck = Int32.TryParse(lines[4],out int tastyLevel);
 
-            bool difficultyCheck = Int32.TryParse(lines[4], out int difficultyLevel);
+            bool difficultyCheck = Int32.TryParse(lines[5], out int difficultyLevel);
 
-            bool timeCheck = Int32.TryParse(lines[5], out int time);
+            bool timeCheck = Int32.TryParse(lines[6], out int time);
 
             if(tasteCheck == false || difficultyCheck == false || timeCheck == false)
             {

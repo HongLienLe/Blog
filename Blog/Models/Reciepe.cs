@@ -6,6 +6,7 @@ namespace Blog.Models
        public string Title { get; set; }
        public string SubTitle { get; set; }
        public string Description { get; set; }
+       public string ImagePath { get; set; }
        public Tasty Tasty { get; set; }
        public Difficulty Difficulty { get; set; }
        public int TimeinMin { get; set; }
@@ -28,4 +29,5 @@ namespace Blog.Models
         Effort = 4,
         Harddd = 5
     }
+
 }

@@ -18,8 +18,14 @@
     <None Remove="Views\Home\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Data\" />
     <Folder Include="Views\Food\" />
+    <Folder Include="Content\" />
+    <Folder Include="Views\Food\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Images\SpicyCucumber1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
